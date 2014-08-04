@@ -1,0 +1,280 @@
+FILES
+
+1.ls 
+ Will shows all the files present in the present working directory
+2.ls-a
+ will shows all the files present in cdw and also hidden files
+3.mkdir filename
+ It creates the directory 
+4.cd filename
+ It changes the pwd
+5.cd ..
+ Changes to parent directory.
+6.pwd 
+ Present wokring directory
+7.ls ~/somename
+ It will shows the things in that folder
+8.ls ~/..
+ It would list the home directory
+9.cp 
+  copy files 
+10. cp /var/is/okp/ .
+  copying the file from that dir to (.) present directory 
+11. cp /var/is/okp/(source) ma/nim/opmn(dest)
+  copying the file from that dir to next  
+12.mv
+  same as cpoy but it moves the file..!
+13.clear
+  clears everthing on the terminal
+14.cat
+  cat used to open the file and to see the contents of the file.
+15.less 
+  we can edit the file contents ...! 
+16.head 
+  This writes the first ten lines of a file on to the screen
+17.tail
+  This gives the last 10 lines of the file
+we can also write 
+  head -5 one.txt - Then it shows only top 5
+ for tail also it repeats....!
+18.grep
+  To search..!
+  grep word file - It searches the word in file and prints the word    matches
+
+19.grep -i 'word' file
+20.grep -ivc 'word' file     -  that check total matches
+21.grep -v 'word' file       -  That do not match.
+22.grep -n 'word' file       - the line number
+23.grep -c 'word' file       - Total count of matched lines
+
+24.wc 
+  word count
+  wc -w one.txt      -  no of lines contains words
+  wc -l one.txt      -  Total no of lines
+
+*Redirecting output:
+
+25.cat > filename  
+  used to create the file ... and then followed by contents to be  added then pressing ctrl+d then it saves and stops.
+
+*Appending:
+26.cat >> filename
+  To append contents to the file.
+27.cat file1 file2 > newfile
+  It concats and joins the contents of the both files to single file.
+
+*Redirecting Input
+28.sort and sort < filename
+  To sort the contents of the file...! 
+29.sort < biglist > slist
+  Here the contents of the biglist file is sorted and given to slist.
+
+*Pipes
+30.who - To see whs on the system.
+31.who > name.txt 
+   This command will creates new file with list of users as content.
+32.cat file1 fil2 | grep p | sort
+   This finds all the lines that contains 'p' and prints the sorted 
+   result.
+
+*Wild cards
+33.ls list*
+   It lists all the files starting with ls.
+34.ls *list
+   It lists all the files ending with ls.
+35.ls ?list
+   It matches all the files that start with one letter and then the  
+   ending pettern is the things.
+
+*On-line manuals.
+36. man wc
+    It gives the manual of the command.
+37.whatis wc
+    It gives online description of the command.
+38. apropos keyword
+    When we are not sure about the command then we can use this it give
+    the list of commands with that name.
+
+*File system security (access rights)
+39.ls -l(l for long listing!)
+   It gives the list of the files with access rights and all then det
+   like time and name.
+40.right
+   4 - read
+   2 - write
+   1- execute.
+   rwx-rwx-rwx => 777 => full permission.
+   rw--r----w- => 642 =>some acces given
+
+41.tar - exracting the tar file by this command 
+   tar -xvf filename    -  Just to extract.
+   tar -zxvf filename   -  To extract to current dir.
+   tar -/myfolder -xvf filename  -  To extarct to another dir.,
+
+*Changing access rights.
+42.chmod 
+    u - user , g - group , o - other , a - all , r - read, w- write , x - execute , + - add permission , - - take permission.
+43.chmod go-rwx filename
+   This will leave the other permission unaffected.
+   it makes 700
+44.chmod a+rw filename.
+   it gives the read and write permisson of biflist to all
+
+"Main thing -  
+Owner(read,write,execute) Group(read,w,exe) all(read , write , exe)"
+same as  -rwx-rwx-rxw (owner , group , user)
+
+*Process and Jobs
+45.ps (process status)
+   List of processes
+46.sleep 100
+   It waits for 100 msec and then it returns to the commnad prompt
+47.bg
+   It gives the background processes.
+48.jobs
+   It gives the job details like weather the process is running , background , suspend.
+49.fg %jobnumber.
+   To restart foreground process.
+50.kill
+   To terminate or signal a process.
+
+51.quota
+   we can check the quota via this command. 
+   quota -v
+52.df .
+   space left on the file system.
+53.du -s *
+   It checks the number of kb that each sub directory uses 
+   and s will display only a summary (total size) and * means all 
+   files and directory.
+54.gzip
+   It reduces the size of a file, thus freeing valuable disk space.
+   ls -l one.txt
+   It gives the details abt the file.
+   using gzip and file name - We can zip a file.
+55.zcat
+   will read the contents of the file without unzipping 
+
+56.file * 
+   This gives the list of files and their types.
+57.diff file1 file2
+   It specifies the difference between the 2 files.
+58.find . -name "*.txt" -print
+   This prints the lsit of files who ends with .txt extension
+59.find . -size +1M -ls
+   Prints the list of files whose size > than 1M
+
+*History
+
+60.history
+   Shows command history list
+61.!!(recall last command).
+62.!-3(recall third most command).
+63.!5 (recall 5th command in list).
+64.!grep(recall last command from starting with grep)
+65.set history = 100
+   It increases the size of the history buffer.
+
+*Compiling unix sw packages
+
+66.compiling 
+   ./configure
+    make 
+    make check - to run self-tests that come with package
+    make install - to install the programs and any data files and documentation
+    make clean -  That is for optional 
+
+67.mkdir download 
+   creating download folder
+   and then by using wget we can downlaod the wanted things
+68.extracting source code
+   cd download 
+   ls -l
+69.gunzip units-1.74.tar.gz
+70.tar -xvf units*
+   ./configure
+   make 
+   make check
+   make install 
+
+To rename a file ->
+   mv file1 file2
+To copy folders
+   sudo cp -R source_path dest_path
+Deleting the non-empty dir
+   rm -rf dirname
+
+71.cd ~/untis174
+   Running the SW
+72.file units
+   shows the contents of this file..! 
+73.strip units 
+   ls -l
+   for doing this we have to install strip first...! 
+74.passwd
+   Gives the password and also to change password.
+75.cal
+   Gives the calender of this month
+76.whoami
+   This command used to find who are u ? 
+77.who 
+   This gives the user and also the pid
+78.users
+   Gives the list of the users who logged in currently
+79.w
+   This will gives the list of the users with their total details like from
+   login time to pid etc...
+
+*Shutting down:
+
+80.halt
+   Brings the system down immediately
+81.init 0 
+   Powers the system down and cleans the system before shutting dwn
+82.init 6
+   Reboots off the system using scripts and then will be completely backup.
+83.poweroff:
+   shuts the system with poweroff
+84.Shutdown 
+   shuts the system
+
+Files and Dir -2 
+85.ls
+   ls -l ,ls -d,ls -p,ls -s,ls -c
+   ls -p shows the dir files also and ls -l shows all and ls -s is the   
+   socket for IPC.
+86.ls -a
+   It displays all the hidden files in that dir or path. 
+87.ls file*.doc
+   displays all the file that starts with file and extension doc.
+88.cat -b filename
+   It gives the content of the file including the line number
+89.wc filename
+   It gives the output like 
+   2 13 144 filename
+   first col represents - No of lines
+   Second colrepresents - No of words in file
+   Third col represents - Total no of bytes in file
+   Fourth col rpresents - represents the filename
+90.wc file1 file2 file3
+   We can give the details of those 3 files in details and then total.
+
+
+Important unix/linuxcommands that a web-developer should know!!
+
+1.ln -s /some/dest name_of_link
+2.tail -f /some/file
+  Gives the last 5 lines of the file.
+3.ctrl+z and bg
+  It tells the process to suspend where as ctr+c  will terminate.
+4.fg and jobs
+  fg - It gives the recent command
+  jobs - It gives the list of jobs.
+5.Pressing 2 tabs is like to find the simimlar commands.
+6.scp - This is a secure copy for data transfer.
+7.Top - Moniters server process by using this command.
+8.tail -reviewng last lines of file
+9.find -finding word writible files.
+10.tar cpzf -to backupdirectorues 
+11.more - viewing command history
+12.ls -al  -> Creating command alias.
